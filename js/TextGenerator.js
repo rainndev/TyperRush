@@ -6,6 +6,9 @@ export class TextGenerator {
   }
 
   generate(count) {
-    return this.words.slice(0, count).join(" ");
+    return Array.from({ length: count }, () => {
+      const randomIndex = Math.floor(Math.random() * this.words.length);
+      return this.words[randomIndex];
+    }).join(" ");
   }
 }
