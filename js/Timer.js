@@ -4,7 +4,14 @@ export class Timer {
     this.startTime = null;
   }
 
-  start() {}
-  getElapsedTime() {}
-  stop() {}
+  start() {
+    this.startTime = Date.now();
+  }
+  getElapsedTime() {
+    if (this.startTime == null) return 0;
+    return (Date.now() - this.startTime) / 1000;
+  }
+  stop() {
+    this.startTime = null;
+  }
 }
