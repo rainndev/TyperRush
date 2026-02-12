@@ -25,7 +25,6 @@ export class TypingTest {
     this.stats.totalTyped = 0;
 
     const textSpans = this.ui.textDisplay.querySelectorAll("span");
-    console.log("textSpans:", textSpans);
     const length = value.length;
 
     textSpans.forEach((span, index) => {
@@ -39,6 +38,7 @@ export class TypingTest {
         this.stats.correct++;
       }
     });
+
     if (length === textSpans.length) {
       this.finish();
     }

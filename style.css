@@ -27,10 +27,12 @@ body {
 
 .correct {
   color: oklch(87.9% 0.169 91.605);
+  transition: color 0.3s ease;
 }
 
 .incorrect {
   color: oklch(80.8% 0.114 19.571);
+  transition: color 0.3s ease;
 }
 
 #input::placeholder {
