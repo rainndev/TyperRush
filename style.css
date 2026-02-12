@@ -1,0 +1,6 @@
+body {
+  background-color: #212121;
+  font-family: "Courier New", Courier, monospace;
+  color: oklch(87.9% 0.169 91.605);
+  padding: 20px;
+}
