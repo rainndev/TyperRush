@@ -13,6 +13,7 @@ export class UI {
     });
     this.input.value = "";
   }
+
   updateCharacter(index, status) {
     const charSpan = this.textDisplay.children[index];
     if (status === "correct") {
@@ -26,6 +27,7 @@ export class UI {
       charSpan.classList.remove("incorrect");
     }
   }
+
   showStats(wpm, accuracy) {
     alert(`WPM: ${wpm}\nAccuracy: ${accuracy}%`);
   }

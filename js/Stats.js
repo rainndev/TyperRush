@@ -1,3 +1,6 @@
+//FOMULA WPM = (Total Characters Typed / 5) / (Time in Minutes)
+//FOMULA Accuracy = (Correct Characters / Total Characters Typed) * 100
+
 export class Stats {
   constructor() {
     this.correct = 0;
@@ -9,6 +12,7 @@ export class Stats {
     const minutes = timeInSeconds / 60;
     return Math.round(wordsTyped / minutes);
   }
+
   calculateAccuracy() {
     if (this.totalTyped === 0) return 0;
     return Math.round((this.correct / this.totalTyped) * 100);

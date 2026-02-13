@@ -12,7 +12,7 @@ export class TypingTest {
   }
 
   start() {
-    const text = this.textGenerator.generate(50);
+    const text = this.textGenerator.generate(5);
     this.ui.renderText(text);
     this.timer.start();
     this.ui.input.addEventListener("input", (e) =>
@@ -21,25 +21,38 @@ export class TypingTest {
   }
 
   handleInput(value) {
-    this.stats.correct = 0;
-    this.stats.totalTyped = 0;
-
     const textSpans = this.ui.textDisplay.querySelectorAll("span");
-    const length = value.length;
+    const currentIndex = value.length - 1;
 
-    textSpans.forEach((span, index) => {
-      const char = value[index];
-      const status =
-        char == null ? null : char === span.innerText ? "correct" : "incorrect";
-      this.ui.updateCharacter(index, status);
-      this.stats.totalTyped++;
+    // Backspace case
+    if (value.length < this.stats.totalTyped) {
+      const removedIndex = this.stats.totalTyped - 1;
 
-      if (status === "correct") {
-        this.stats.correct++;
+      if (textSpans[removedIndex].classList.contains("correct")) {
+        this.stats.correct--;
       }
-    });
 
-    if (length === textSpans.length) {
+      this.ui.updateCharacter(removedIndex, null);
+      this.stats.totalTyped--;
+      return;
+    }
+
+    // Prevent out of bounds
+    if (currentIndex < 0 || currentIndex >= textSpans.length) return;
+
+    const typedChar = value[currentIndex];
+    const actualChar = textSpans[currentIndex].innerText;
+
+    if (typedChar === actualChar) {
+      this.ui.updateCharacter(currentIndex, "correct");
+      this.stats.correct++;
+    } else {
+      this.ui.updateCharacter(currentIndex, "incorrect");
+    }
+
+    this.stats.totalTyped++;
+
+    if (value.length === textSpans.length) {
       this.finish();
     }
   }
