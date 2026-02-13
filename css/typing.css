@@ -1,0 +1,23 @@
+#text-display {
+  font-size: 36px;
+  margin-bottom: 20px;
+  line-height: 50px;
+  font-weight: 700;
+  color: var(--gray-color);
+  text-align: center;
+}
+
+#input-words {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+#typing-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#typing-container h2 {
+  margin-bottom: 1.5rem;
+}

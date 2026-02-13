@@ -10,6 +10,7 @@ export class UI {
     this.resultDiv = document.getElementById("result");
     this.typingContainer = document.getElementById("typing-container");
     this.restartButton = document.getElementById("restart-button");
+    this.elapseTimeDisplay = document.getElementById("elapse-time-display");
   }
 
   renderText(text) {

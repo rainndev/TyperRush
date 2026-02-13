@@ -11,6 +11,7 @@ export class TypingTest {
     this.ui = new UI();
     this.handleInputBound = (e) => this.handleInput(e.target.value);
     this.generatedText = this.textGenerator.generate(20);
+    this.timeInterval = null;
 
     //focus input when text display is clicked
     this.ui.textDisplay.addEventListener("click", () => {
@@ -30,9 +31,20 @@ export class TypingTest {
     this.ui.input.addEventListener("input", this.handleInputBound);
   }
 
+  handleElapsedTime() {
+    if (this.timer.isStarted && !this.timeInterval) {
+      this.timeInterval = setInterval(() => {
+        const elapsedTime = this.timer.getElapsedTimeFormatted();
+        this.ui.elapseTimeDisplay.textContent = elapsedTime;
+      }, 100);
+    }
+  }
+
   handleInput(value) {
     const textSpans = this.ui.textDisplay.querySelectorAll("span");
     const currentIndex = value.length - 1;
+
+    this.handleElapsedTime();
 
     // Backspace case
     if (value.length < this.stats.totalTyped) {
@@ -91,6 +103,8 @@ export class TypingTest {
       timeInSeconds,
     );
 
+    clearInterval(this.timeInterval);
+    this.timeInterval = null;
     this.timer.stop();
     this.ui.input.removeEventListener("input", this.handleInputBound);
   }
@@ -99,11 +113,13 @@ export class TypingTest {
     this.stats = new Stats();
     this.ui.renderText("");
     this.timer.stop();
+    this.ui.timeDisplay.textContent = "0.000s";
   }
 
   restart() {
     this.ui.resultDiv.style.display = "none";
     this.ui.typingContainer.style.display = "flex";
+    this.ui.elapseTimeDisplay.textContent = "0.000s";
 
     this.reset();
     this.generatedText = this.textGenerator.generate(20);
