@@ -9,6 +9,11 @@ export class TypingTest {
     this.textGenerator = new TextGenerator();
     this.stats = new Stats();
     this.ui = new UI();
+
+    //focus input when text display is clicked
+    this.ui.textDisplay.addEventListener("click", () => {
+      this.ui.input.focus();
+    });
   }
 
   start() {
