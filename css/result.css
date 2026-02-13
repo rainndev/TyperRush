@@ -1,4 +1,4 @@
-.result {
+#result {
   display: none;
   flex-direction: column;
 }
@@ -19,7 +19,7 @@
   color: var(--yellow-color);
 }
 
-.overview {
+#overview {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,13 +27,13 @@
   padding: 2rem;
 }
 
-.overview h1 {
+#overview h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--yellow-color);
 }
 
-.overview p {
+#overview p {
   font-size: 1.5rem;
   color: var(--gray-color);
   font-family: "Segoe UI", sans-serif;
@@ -41,7 +41,7 @@
   line-height: 35px;
 }
 
-.overview button {
+#overview button {
   width: fit-content;
   margin-top: 2rem;
   padding: 1rem 2rem;
@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 
-.stats {
+#stats {
   flex: 1;
   display: grid;
   gap: 4rem;
@@ -62,33 +62,33 @@
   grid-template-columns: auto auto;
 }
 
-.stats div {
+#stats div {
   text-align: start;
   padding: 1rem;
 }
 
-.stats div h2 {
+#stats div h2 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
   color: var(--yellow-color);
   white-space: nowrap;
 }
 
-.stats div p {
+#stats div p {
   font-family: "Segoe UI", sans-serif;
   font-size: 1rem;
   white-space: nowrap;
   color: oklch(55.3% 0.013 58.071);
 }
 
-.result-menu-container {
+#result-menu-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
 }
 
-.result-menu-container button {
+#result-menu-container button {
   display: flex;
   width: fit-content;
   padding: 1rem 5rem;
@@ -105,22 +105,22 @@
   transition: background-color 0.3s ease;
 }
 
-.result-menu-container button:hover {
+#result-menu-container button:hover {
   background-color: var(--dark-yellow-color);
 }
 
-.result-menu-container button:active {
+#result-menu-container button:active {
   background-color: var(--yellow-color);
 }
 
-.result-header {
+#result-header {
   display: flex;
   justify-content: center;
   width: 100%;
   text-align: center;
 }
 
-.result-header h1 {
+#result-header h1 {
   translate: 0% 50%;
   color: var(--yellow-color);
   font-weight: 700;

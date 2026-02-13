@@ -7,7 +7,7 @@ export class UI {
     this.accuracyDisplay = document.getElementById("accuracy-display");
     this.timeDisplay = document.getElementById("time-display");
     this.correctCharsDisplay = document.getElementById("correct-chars-display");
-    this.resultDiv = document.querySelector(".result");
+    this.resultDiv = document.getElementById("result");
     this.typingContainer = document.getElementById("typing-container");
     this.restartButton = document.getElementById("restart-button");
   }
