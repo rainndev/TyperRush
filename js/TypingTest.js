@@ -57,6 +57,8 @@ export class TypingTest {
     const typedChar = value[currentIndex];
     const actualChar = textSpans[currentIndex].innerText;
 
+    console.log("Typed char:", typedChar, "Actual char:", actualChar);
+
     if (typedChar === actualChar) {
       this.ui.updateCharacter(currentIndex, "correct");
       this.stats.correct++;
@@ -77,12 +79,12 @@ export class TypingTest {
     const correctChars = `${this.stats.correct}/${this.stats.totalTyped}`;
 
     console.log("Test finished in seconds:", timeInSeconds);
-    const wpm = this.stats.calculateWPM(timeInSeconds);
-    console.log("Calculated WPM:", wpm);
+    const cpm = this.stats.calculateCPM(timeInSeconds);
+    console.log("Calculated Cpm:", cpm);
     const accuracy = this.stats.calculateAccuracy();
 
     this.ui.showStats(
-      wpm,
+      cpm,
       accuracy,
       generatedText,
       correctChars,

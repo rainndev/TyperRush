@@ -7,10 +7,11 @@ export class Stats {
     this.totalTyped = 0;
   }
 
-  calculateWPM(timeInSeconds) {
-    const wordsTyped = this.totalTyped / 5;
+  calculateCPM(timeInSeconds) {
     const minutes = timeInSeconds / 60;
-    return Math.round(wordsTyped / minutes);
+    if (minutes <= 0) return 0;
+
+    return Math.round(this.totalTyped / minutes);
   }
 
   calculateAccuracy() {
