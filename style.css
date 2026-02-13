@@ -45,8 +45,8 @@ body {
   color: oklch(50% 0.1 91.605);
 }
 
-.result-container {
-  display: flex;
+#result-container {
+  display: none;
   gap: 3rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -55,7 +55,7 @@ body {
   border-radius: 5rem;
 }
 
-.result-container h1 {
+#result-container h1 {
   font-size: 2rem;
   color: oklch(87.9% 0.169 91.605);
 }

@@ -7,6 +7,8 @@ export class UI {
     this.accuracyDisplay = document.getElementById("accuracy-display");
     this.timeDisplay = document.getElementById("time-display");
     this.correctCharsDisplay = document.getElementById("correct-chars-display");
+    this.resultContainer = document.getElementById("result-container");
+    this.typingContainer = document.getElementById("typing-container");
   }
 
   renderText(text) {
@@ -36,12 +38,12 @@ export class UI {
 
   showStats(wpm, accuracy, generatedText, correctChars, time) {
     this.textDisplayWords.innerText = generatedText;
-
     this.wpmDisplay.innerText = wpm;
     this.accuracyDisplay.innerText = `${accuracy}%`;
     this.correctCharsDisplay.innerText = `${correctChars}`;
     this.timeDisplay.innerText = `${time.toFixed(2)}s`;
 
-    alert(`WPM: ${wpm}\nAccuracy: ${accuracy}%`);
+    this.resultContainer.style.display = "flex";
+    this.typingContainer.style.display = "none";
   }
 }
