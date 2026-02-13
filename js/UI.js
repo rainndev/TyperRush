@@ -28,16 +28,13 @@ export class UI {
 
     if (!charSpan) return;
 
-    if (status === "correct") {
-      charSpan.classList.add("correct");
-      charSpan.classList.remove("incorrect");
-    } else if (status === "incorrect") {
-      charSpan.classList.add("incorrect");
-      charSpan.classList.remove("correct");
-    } else {
+    if (!status) {
       charSpan.classList.remove("correct");
       charSpan.classList.remove("incorrect");
+      return;
     }
+
+    charSpan.classList.add(status);
   }
 
   showStats(wpm, accuracy, generatedText, correctChars, time) {
