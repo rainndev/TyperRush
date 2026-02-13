@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #212121;
+  font-family: "Courier New", Courier, monospace;
+  color: oklch(87.9% 0.169 91.605);
+  padding: 5rem;
+  margin: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-display {
+  font-size: 36px;
+  margin-bottom: 20px;
+  line-height: 50px;
+  font-weight: 700;
+  color: oklch(44.4% 0.011 73.639);
+  text-align: center;
+}
+
+#input-words {
+  opacity: 0;
+  position: absolute;
+}
+
+.correct {
+  color: oklch(87.9% 0.169 91.605);
+  transition: color 0.3s ease;
+}
+
+.incorrect {
+  color: oklch(80.8% 0.114 19.571);
+  transition: color 0.3s ease;
+}
+
+#input::placeholder {
+  color: oklch(50% 0.1 91.605);
+}
