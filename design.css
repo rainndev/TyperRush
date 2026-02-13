@@ -82,6 +82,18 @@ body {
   line-height: 35px;
 }
 
+.overview button {
+  width: fit-content;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: oklch(87.9% 0.169 91.605);
+  color: #212121;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
 .stats {
   flex: 1;
   display: grid;
@@ -93,7 +105,7 @@ body {
 
 .stats div {
   width: 150px;
-  text-align: center;
+  text-align: start;
 }
 
 .stats div h2 {
@@ -108,4 +120,39 @@ body {
   font-size: 1rem;
   white-space: nowrap;
   color: oklch(55.3% 0.013 58.071);
+}
+
+.result-menu-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.result-menu-container button {
+  width: fit-content;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #212121;
+  color: oklch(87.9% 0.169 91.605);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.result-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.result-header h1 {
+  translate: 0% 50%;
+  color: oklch(87.9% 0.169 91.605);
+  font-weight: 700;
+  width: fit-content;
+  background-color: oklch(0.2478 0 0);
+  border: 1px oklch(87.81% 0.16869 91.863 / 0.25) solid;
+  font-size: 1.5rem;
+  padding: 1.5rem 5rem;
 }

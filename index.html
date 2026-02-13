@@ -7,34 +7,43 @@
     <link rel="stylesheet" href="./design.css" />
   </head>
   <body>
-    <div id="result-container">
-      <div class="overview">
-        <h1>Words</h1>
-        <p id="text-display-words">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
-          minus a eveniet consequatur! Reiciendis cumque, consectetur deserunt
-          iste distinctio velit repellendus deleniti consequatur corrupti,
-          minima corporis, aliquam ratione omnis praesentium?
-        </p>
+    <div>
+      <div class="result-header">
+        <h1>Result</h1>
+      </div>
+      <div id="result-container">
+        <div class="overview">
+          <h1>Words</h1>
+          <p id="text-display-words">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
+            minus a eveniet consequatur! Reiciendis cumque, consectetur deserunt
+            iste distinctio velit repellendus deleniti consequatur corrupti,
+            minima corporis, aliquam ratione omnis praesentium?
+          </p>
+        </div>
+
+        <div class="stats">
+          <div>
+            <h2 id="wpm-display">0</h2>
+            <p>WPM</p>
+          </div>
+          <div>
+            <h2 id="accuracy-display">0%</h2>
+            <p>Accuracy</p>
+          </div>
+          <div>
+            <h2 id="time-display">0sec</h2>
+            <p>Time</p>
+          </div>
+          <div>
+            <h2 id="correct-chars-display">0/10</h2>
+            <p>Total Correct Letters</p>
+          </div>
+        </div>
       </div>
 
-      <div class="stats">
-        <div>
-          <h2 id="wpm-display">117</h2>
-          <p>WPM</p>
-        </div>
-        <div>
-          <h2 id="accuracy-display">100%</h2>
-          <p>Accuracy</p>
-        </div>
-        <div>
-          <h2 id="time-display">20sec</h2>
-          <p>Time</p>
-        </div>
-        <div>
-          <h2 id="correct-chars-display">117</h2>
-          <p>Total Correct Letters</p>
-        </div>
+      <div class="result-menu-container">
+        <button>Restart</button>
       </div>
     </div>
 
