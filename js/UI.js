@@ -9,6 +9,8 @@ export class UI {
     this.correctCharsDisplay = document.getElementById("correct-chars-display");
     this.resultContainer = document.getElementById("result-container");
     this.typingContainer = document.getElementById("typing-container");
+    this.restartButton = document.getElementById("restart-button");
+    this.resultHeader = document.querySelector(".result-header");
   }
 
   renderText(text) {
@@ -23,6 +25,8 @@ export class UI {
 
   updateCharacter(index, status) {
     const charSpan = this.textDisplay.children[index];
+
+    if (!charSpan) return;
 
     if (status === "correct") {
       charSpan.classList.add("correct");
@@ -44,6 +48,9 @@ export class UI {
     this.timeDisplay.innerText = `${time.toFixed(2)}s`;
 
     this.resultContainer.style.display = "flex";
+    this.resultHeader.style.display = "flex";
+    this.restartButton.style.display = "flex";
+
     this.typingContainer.style.display = "none";
   }
 }

@@ -9,22 +9,25 @@ export class TypingTest {
     this.textGenerator = new TextGenerator();
     this.stats = new Stats();
     this.ui = new UI();
+    this.handleInputBound = (e) => this.handleInput(e.target.value);
+    this.generatedText = this.textGenerator.generate(20);
 
     //focus input when text display is clicked
     this.ui.textDisplay.addEventListener("click", () => {
       this.ui.input.focus();
     });
 
-    this.generatedText = this.textGenerator.generate(20);
+    this.ui.restartButton.addEventListener("click", () => {
+      console.log("Restart button clicked.");
+      this.restart();
+    });
   }
 
   start() {
     const text = this.generatedText;
     this.ui.renderText(text);
     this.timer.start();
-    this.ui.input.addEventListener("input", (e) =>
-      this.handleInput(e.target.value),
-    );
+    this.ui.input.addEventListener("input", this.handleInputBound);
   }
 
   handleInput(value) {
@@ -33,9 +36,13 @@ export class TypingTest {
 
     // Backspace case
     if (value.length < this.stats.totalTyped) {
+      if (this.stats.totalTyped <= 0) return; // No characters to remove
       const removedIndex = this.stats.totalTyped - 1;
 
-      if (textSpans[removedIndex].classList.contains("correct")) {
+      if (
+        textSpans[removedIndex] &&
+        textSpans[removedIndex].classList.contains("correct")
+      ) {
         this.stats.correct--;
       }
 
@@ -83,11 +90,23 @@ export class TypingTest {
     );
 
     this.timer.stop();
+    this.ui.input.removeEventListener("input", this.handleInputBound);
   }
 
   reset() {
     this.stats = new Stats();
     this.ui.renderText("");
     this.timer.stop();
+  }
+
+  restart() {
+    this.ui.resultContainer.style.display = "none";
+    this.ui.resultHeader.style.display = "none";
+    this.ui.restartButton.style.display = "none";
+    this.ui.typingContainer.style.display = "flex";
+
+    this.reset();
+    this.generatedText = this.textGenerator.generate(20);
+    this.start();
   }
 }

@@ -1,6 +1,6 @@
 #result-container {
   max-width: 1200px;
-  display: flex;
+  display: none;
   gap: 3rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -84,6 +84,7 @@
 }
 
 .result-menu-container button {
+  display: none;
   width: fit-content;
   padding: 1rem 5rem;
   font-size: 1rem;
@@ -93,7 +94,6 @@
   border: none;
   border-radius: 1rem;
   cursor: pointer;
-  display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
@@ -109,7 +109,7 @@
 }
 
 .result-header {
-  display: flex;
+  display: none;
   justify-content: center;
   width: 100%;
   text-align: center;

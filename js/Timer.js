@@ -5,6 +5,7 @@ export class Timer {
   }
 
   start() {
+    console.log("Timer started.");
     this.startTime = Date.now();
   }
   getElapsedTime() {
@@ -13,6 +14,7 @@ export class Timer {
     return (Date.now() - this.startTime) / 1000;
   }
   stop() {
+    console.log("Timer stopped at:", this.getElapsedTime(), "seconds");
     this.startTime = null;
   }
 }
