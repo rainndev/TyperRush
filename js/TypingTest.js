@@ -124,5 +124,6 @@ export class TypingTest {
     this.reset();
     this.generatedText = this.textGenerator.generate(20);
     this.start();
+    this.handleElapsedTime();
   }
 }
