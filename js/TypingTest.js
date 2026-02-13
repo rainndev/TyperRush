@@ -79,12 +79,12 @@ export class TypingTest {
     const correctChars = `${this.stats.correct}/${this.stats.totalTyped}`;
 
     console.log("Test finished in seconds:", timeInSeconds);
-    const cpm = this.stats.calculateCPM(timeInSeconds);
-    console.log("Calculated Cpm:", cpm);
+    const wpm = this.stats.calculateWPM(timeInSeconds);
+    console.log("Calculated Wpm:", wpm);
     const accuracy = this.stats.calculateAccuracy();
 
     this.ui.showStats(
-      cpm,
+      wpm,
       accuracy,
       generatedText,
       correctChars,
