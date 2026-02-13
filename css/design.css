@@ -4,10 +4,18 @@
   padding: 0px;
 }
 
+:root {
+  --yellow-color: oklch(87.9% 0.169 91.605);
+  --black-color: oklch(0.2478 0 0);
+  --gray-color: oklch(44.4% 0.011 73.639);
+  --red-color: oklch(80.8% 0.114 19.571);
+  --dark-yellow-color: oklch(87.81% 0.16869 91.863 / 0.25);
+}
+
 body {
   background-color: #212121;
   font-family: "Courier New", Courier, monospace;
-  color: oklch(87.9% 0.169 91.605);
+  color: var(--yellow-color);
   padding: 5rem;
   margin: 0;
   height: 100dvh;
@@ -22,7 +30,7 @@ body {
   margin-bottom: 20px;
   line-height: 50px;
   font-weight: 700;
-  color: oklch(44.4% 0.011 73.639);
+  color: var(--gray-color);
   text-align: center;
 }
 
@@ -32,12 +40,12 @@ body {
 }
 
 .correct {
-  color: oklch(87.9% 0.169 91.605);
+  color: var(--yellow-color);
   transition: color 0.3s ease;
 }
 
 .incorrect {
-  color: oklch(80.8% 0.114 19.571);
+  color: var(--red-color);
   transition: color 0.3s ease;
 }
 
