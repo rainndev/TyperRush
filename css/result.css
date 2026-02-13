@@ -1,6 +1,11 @@
+.result {
+  display: none;
+  flex-direction: column;
+}
+
 #result-container {
   max-width: 1200px;
-  display: none;
+  display: flex;
   gap: 3rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -84,7 +89,7 @@
 }
 
 .result-menu-container button {
-  display: none;
+  display: flex;
   width: fit-content;
   padding: 1rem 5rem;
   font-size: 1rem;
@@ -109,7 +114,7 @@
 }
 
 .result-header {
-  display: none;
+  display: flex;
   justify-content: center;
   width: 100%;
   text-align: center;

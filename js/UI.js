@@ -7,10 +7,9 @@ export class UI {
     this.accuracyDisplay = document.getElementById("accuracy-display");
     this.timeDisplay = document.getElementById("time-display");
     this.correctCharsDisplay = document.getElementById("correct-chars-display");
-    this.resultContainer = document.getElementById("result-container");
+    this.resultDiv = document.querySelector(".result");
     this.typingContainer = document.getElementById("typing-container");
     this.restartButton = document.getElementById("restart-button");
-    this.resultHeader = document.querySelector(".result-header");
   }
 
   renderText(text) {
@@ -47,10 +46,7 @@ export class UI {
     this.correctCharsDisplay.innerText = `${correctChars}`;
     this.timeDisplay.innerText = `${time.toFixed(2)}s`;
 
-    this.resultContainer.style.display = "flex";
-    this.resultHeader.style.display = "flex";
-    this.restartButton.style.display = "flex";
-
+    this.resultDiv.style.display = "flex";
     this.typingContainer.style.display = "none";
   }
 }

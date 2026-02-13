@@ -102,9 +102,7 @@ export class TypingTest {
   }
 
   restart() {
-    this.ui.resultContainer.style.display = "none";
-    this.ui.resultHeader.style.display = "none";
-    this.ui.restartButton.style.display = "none";
+    this.ui.resultDiv.style.display = "none";
     this.ui.typingContainer.style.display = "flex";
 
     this.reset();
