@@ -15,7 +15,7 @@ export class TypingTest {
       this.ui.input.focus();
     });
 
-    this.generatedText = this.textGenerator.generate(5);
+    this.generatedText = this.textGenerator.generate(20);
   }
 
   start() {
