@@ -7,8 +7,41 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <div id="text-display"></div>
-    <input type="text" id="input" autocomplete="off" />
+    <div class="result-container">
+      <div class="overview">
+        <h1>Words</h1>
+        <p id="text-display-words">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
+          minus a eveniet consequatur! Reiciendis cumque, consectetur deserunt
+          iste distinctio velit repellendus deleniti consequatur corrupti,
+          minima corporis, aliquam ratione omnis praesentium?
+        </p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <h2 id="wpm-display">117</h2>
+          <p>WPM</p>
+        </div>
+        <div>
+          <h2 id="accuracy-display">100%</h2>
+          <p>Accuracy</p>
+        </div>
+        <div>
+          <h2 id="time-display">20sec</h2>
+          <p>Time</p>
+        </div>
+        <div>
+          <h2 id="correct-chars-display">117</h2>
+          <p>Total Correct Chars</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div id="text-display"></div>
+      <input type="text" id="input-words" autocomplete="off" />
+    </div>
   </body>
   <script type="module" src="/js/main.js"></script>
 </html>

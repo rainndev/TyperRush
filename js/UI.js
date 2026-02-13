@@ -1,7 +1,12 @@
 export class UI {
   constructor() {
     this.textDisplay = document.getElementById("text-display");
-    this.input = document.getElementById("input");
+    this.input = document.getElementById("input-words");
+    this.textDisplayWords = document.getElementById("text-display-words");
+    this.wpmDisplay = document.getElementById("wpm-display");
+    this.accuracyDisplay = document.getElementById("accuracy-display");
+    this.timeDisplay = document.getElementById("time-display");
+    this.correctCharsDisplay = document.getElementById("correct-chars-display");
   }
 
   renderText(text) {
@@ -16,6 +21,7 @@ export class UI {
 
   updateCharacter(index, status) {
     const charSpan = this.textDisplay.children[index];
+
     if (status === "correct") {
       charSpan.classList.add("correct");
       charSpan.classList.remove("incorrect");
@@ -28,7 +34,14 @@ export class UI {
     }
   }
 
-  showStats(wpm, accuracy) {
+  showStats(wpm, accuracy, generatedText, correctChars, time) {
+    this.textDisplayWords.innerText = generatedText;
+
+    this.wpmDisplay.innerText = wpm;
+    this.accuracyDisplay.innerText = `${accuracy}%`;
+    this.correctCharsDisplay.innerText = `${correctChars}`;
+    this.timeDisplay.innerText = `${time.toFixed(2)}s`;
+
     alert(`WPM: ${wpm}\nAccuracy: ${accuracy}%`);
   }
 }

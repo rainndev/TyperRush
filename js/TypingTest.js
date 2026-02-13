@@ -14,10 +14,12 @@ export class TypingTest {
     this.ui.textDisplay.addEventListener("click", () => {
       this.ui.input.focus();
     });
+
+    this.generatedText = this.textGenerator.generate(5);
   }
 
   start() {
-    const text = this.textGenerator.generate(5);
+    const text = this.generatedText;
     this.ui.renderText(text);
     this.timer.start();
     this.ui.input.addEventListener("input", (e) =>
@@ -64,13 +66,25 @@ export class TypingTest {
 
   finish() {
     const timeInSeconds = this.timer.getElapsedTime();
+    const generatedText = this.generatedText;
+    const correctChars = `${this.stats.correct}/${this.stats.totalTyped}`;
+
     console.log("Test finished in seconds:", timeInSeconds);
     const wpm = this.stats.calculateWPM(timeInSeconds);
     console.log("Calculated WPM:", wpm);
     const accuracy = this.stats.calculateAccuracy();
-    this.ui.showStats(wpm, accuracy);
+
+    this.ui.showStats(
+      wpm,
+      accuracy,
+      generatedText,
+      correctChars,
+      timeInSeconds,
+    );
+
     this.timer.stop();
   }
+
   reset() {
     this.stats = new Stats();
     this.ui.renderText("");
