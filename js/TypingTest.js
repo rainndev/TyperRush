@@ -3,6 +3,8 @@ import { TextGenerator } from "./TextGenerator.js";
 import { Timer } from "./Timer.js";
 import { UI } from "./UI.js";
 
+const MAX_WORDS = 20;
+
 export class TypingTest {
   constructor() {
     this.timer = new Timer();
@@ -10,13 +12,8 @@ export class TypingTest {
     this.stats = new Stats();
     this.ui = new UI();
     this.handleInputBound = (e) => this.handleInput(e.target.value);
-    this.generatedText = this.textGenerator.generate(20);
+    this.generatedText = this.textGenerator.generate(MAX_WORDS);
     this.timeInterval = null;
-
-    //focus input when text display is clicked
-    this.ui.textDisplay.addEventListener("click", () => {
-      this.ui.input.focus();
-    });
 
     this.ui.restartButton.addEventListener("click", () => {
       console.log("Restart button clicked.");
@@ -40,31 +37,36 @@ export class TypingTest {
     }
   }
 
+  handleBackspace(textSpans) {
+    if (this.stats.totalTyped <= 0) return; // No characters to remove
+    const removedIndex = this.stats.totalTyped - 1;
+
+    if (
+      textSpans[removedIndex] &&
+      textSpans[removedIndex].classList.contains("correct")
+    ) {
+      this.stats.correct--;
+    }
+
+    this.ui.updateCharacter(removedIndex, null);
+    this.stats.totalTyped--;
+    return;
+  }
+
   handleInput(value) {
     const textSpans = this.ui.textDisplay.querySelectorAll("span");
     const currentIndex = value.length - 1;
 
-    this.handleElapsedTime();
+    // Prevent out of bounds
+    if (currentIndex < 0 || currentIndex >= textSpans.length) return;
 
     // Backspace case
     if (value.length < this.stats.totalTyped) {
-      if (this.stats.totalTyped <= 0) return; // No characters to remove
-      const removedIndex = this.stats.totalTyped - 1;
-
-      if (
-        textSpans[removedIndex] &&
-        textSpans[removedIndex].classList.contains("correct")
-      ) {
-        this.stats.correct--;
-      }
-
-      this.ui.updateCharacter(removedIndex, null);
-      this.stats.totalTyped--;
+      this.handleBackspace(textSpans);
       return;
     }
 
-    // Prevent out of bounds
-    if (currentIndex < 0 || currentIndex >= textSpans.length) return;
+    this.handleElapsedTime();
 
     const typedChar = value[currentIndex];
     const actualChar = textSpans[currentIndex].innerText;

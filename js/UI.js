@@ -11,6 +11,11 @@ export class UI {
     this.typingContainer = document.getElementById("typing-container");
     this.restartButton = document.getElementById("restart-button");
     this.elapseTimeDisplay = document.getElementById("elapse-time-display");
+
+    //focus input when text display is clicked
+    this.restart = this.textDisplay.addEventListener("click", () => {
+      this.input.focus();
+    });
   }
 
   renderText(text) {
