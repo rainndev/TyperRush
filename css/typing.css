@@ -1,10 +1,14 @@
 #text-display {
-  font-size: 36px;
+  font-size: var(--text-lg);
   margin-bottom: 20px;
-  line-height: 50px;
+  line-height: 2rem;
   font-weight: 700;
   color: var(--gray-color);
   text-align: center;
+}
+
+#elapse-time-display {
+  font-size: var(--text-base);
 }
 
 #input-words {
@@ -16,6 +20,8 @@
 #typing-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100dvh;
 }
 
 #typing-header {

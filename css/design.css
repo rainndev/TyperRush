@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  /* border: 1px solid red; */
 }
 
 :root {
@@ -10,15 +11,27 @@
   --gray-color: oklch(44.4% 0.011 73.639);
   --red-color: oklch(80.8% 0.114 19.571);
   --dark-yellow-color: oklch(87.81% 0.16869 91.863 / 0.25);
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
 }
 
 body {
   background-color: #212121;
   font-family: "Courier New", Courier, monospace;
   color: var(--yellow-color);
-  padding: 5rem;
+  padding: 1rem;
   margin: 0;
-  height: 100dvh;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
