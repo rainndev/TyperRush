@@ -18,6 +18,36 @@
   flex-direction: column;
 }
 
-#typing-container h2 {
-  margin-bottom: 1.5rem;
+#typing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  border-bottom: 1px dashed var(--gray-color);
+}
+
+#caps-lock-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-radius: 0.8rem;
+  color: var(--gray-color);
+  border: 1px solid var(--gray-color);
+  transition:
+    color ease-in-out 0.2s,
+    background-color ease-in-out 0.2s;
+}
+
+.caps-lock-on {
+  background-color: var(--gray-color) !important;
+  color: var(--yellow-color) !important;
+}
+
+.caps-lock-off {
+  background-color: var(--black-color) !important;
+  color: var(--gray-color) !important ;
 }

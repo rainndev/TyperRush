@@ -11,10 +11,25 @@ export class UI {
     this.typingContainer = document.getElementById("typing-container");
     this.restartButton = document.getElementById("restart-button");
     this.elapseTimeDisplay = document.getElementById("elapse-time-display");
+    this.capsLockToggle = document.getElementById("caps-lock-toggle");
 
     //focus input when text display is clicked
     this.restart = this.textDisplay.addEventListener("click", () => {
       this.input.focus();
+    });
+
+    document.addEventListener("keyup", (e) => {
+      const isCapsLockOn = e.getModifierState("CapsLock");
+
+      if (isCapsLockOn) {
+        console.log("Caps Lock is ON");
+        this.capsLockToggle.classList.add("caps-lock-on");
+        this.capsLockToggle.classList.remove("caps-lock-off");
+      } else {
+        console.log("Caps Lock is OFF");
+        this.capsLockToggle.classList.remove("caps-lock-on");
+        this.capsLockToggle.classList.add("caps-lock-off");
+      }
     });
   }
 
