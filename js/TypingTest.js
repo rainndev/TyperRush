@@ -37,9 +37,10 @@ export class TypingTest {
     }
   }
 
-  handleBackspace(textSpans) {
-    if (this.stats.totalTyped <= 0) return; // No characters to remove
-    const removedIndex = this.stats.totalTyped - 1;
+  handleBackspace(valueLength, textSpans) {
+    const removedIndex = valueLength;
+
+    if (removedIndex < 0) return; // No characters to remove
 
     if (
       textSpans[removedIndex] &&
@@ -56,13 +57,16 @@ export class TypingTest {
   handleInput(value) {
     const textSpans = this.ui.textDisplay.querySelectorAll("span");
     const currentIndex = value.length - 1;
-
     // Prevent out of bounds
-    if (currentIndex < 0 || currentIndex >= textSpans.length) return;
+    if (currentIndex < 0 || currentIndex >= textSpans.length) {
+      return;
+    }
+
+    console.log("current index:", currentIndex, "value length:", value.length);
 
     // Backspace case
     if (value.length < this.stats.totalTyped) {
-      this.handleBackspace(textSpans);
+      this.handleBackspace(value.length, textSpans);
       return;
     }
 
@@ -80,7 +84,7 @@ export class TypingTest {
       this.ui.updateCharacter(currentIndex, "incorrect");
     }
 
-    this.stats.totalTyped++;
+    this.stats.totalTyped = value.length;
 
     if (value.length === textSpans.length) {
       this.finish();

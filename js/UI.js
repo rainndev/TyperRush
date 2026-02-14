@@ -22,13 +22,27 @@ export class UI {
       const isCapsLockOn = e.getModifierState("CapsLock");
 
       if (isCapsLockOn) {
-        console.log("Caps Lock is ON");
         this.capsLockToggle.classList.add("caps-lock-on");
         this.capsLockToggle.classList.remove("caps-lock-off");
       } else {
-        console.log("Caps Lock is OFF");
         this.capsLockToggle.classList.remove("caps-lock-on");
         this.capsLockToggle.classList.add("caps-lock-off");
+      }
+    });
+
+    this.input.addEventListener("keydown", (e) => {
+      if (
+        (e.ctrlKey && e.key === "a") ||
+        (e.ctrlKey && e.key === "A") ||
+        (e.metaKey && e.key === "a") ||
+        (e.metaKey && e.key === "A") ||
+        (e.ctrlKey && e.key === "Backspace") ||
+        (e.metaKey && e.key === "Backspace")
+      ) {
+        e.preventDefault();
+        console.log(
+          "Ctrl + A detected. Preventing default select all behavior.",
+        );
       }
     });
   }
