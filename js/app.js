@@ -1,6 +1,5 @@
 import { TypingTest } from "./TypingTest.js";
 
-const test = new TypingTest();
-test.start();
+new TypingTest();
 
 console.log("Typing test started.");

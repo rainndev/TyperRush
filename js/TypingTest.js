@@ -14,6 +14,11 @@ export class TypingTest {
     this.handleInputBound = (e) => this.handleInput(e.target.value);
     this.generatedText = this.textGenerator.generate(MAX_WORDS);
     this.timeInterval = null;
+    this.isTestStarted = false;
+
+    // Initial render and event listeners
+    this.ui.renderText(this.generatedText);
+    this.ui.input.addEventListener("input", this.handleInputBound);
 
     this.ui.restartButton.addEventListener("click", () => {
       console.log("Restart button clicked.");
@@ -22,9 +27,8 @@ export class TypingTest {
   }
 
   start() {
-    const text = this.generatedText;
-    this.ui.renderText(text);
-    this.timer.start();
+    this.generatedText = this.textGenerator.generate(20);
+    this.ui.renderText(this.generatedText);
     this.ui.input.addEventListener("input", this.handleInputBound);
   }
 
@@ -55,8 +59,15 @@ export class TypingTest {
   }
 
   handleInput(value) {
+    if (!this.isTestStarted) {
+      this.isTestStarted = true;
+      this.timer.start();
+      this.handleElapsedTime();
+    }
+
     const textSpans = this.ui.textDisplay.querySelectorAll("span");
     const currentIndex = value.length - 1;
+
     // Prevent out of bounds
     if (currentIndex < 0 || currentIndex >= textSpans.length) {
       return;
@@ -119,6 +130,7 @@ export class TypingTest {
     this.stats = new Stats();
     this.ui.renderText("");
     this.timer.stop();
+    this.isTestStarted = false;
     this.ui.timeDisplay.textContent = "0.000s";
   }
 
@@ -128,8 +140,6 @@ export class TypingTest {
     this.ui.elapseTimeDisplay.textContent = "0.000s";
 
     this.reset();
-    this.generatedText = this.textGenerator.generate(20);
     this.start();
-    this.handleElapsedTime();
   }
 }
