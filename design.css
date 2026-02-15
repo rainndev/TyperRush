@@ -39,6 +39,31 @@ body {
   align-items: center;
 }
 
+#app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  border: 1px solid var(--gray-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  gap: 0.8rem;
+}
+
+#app-header h1 span {
+  color: var(--gray-color);
+}
+
+#app-header svg {
+  color: var(--gray-color);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+#app-title {
+  font-size: var(--text-base);
+}
+
 .correct {
   color: var(--yellow-color);
   transition: color 0.3s ease;
