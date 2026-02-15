@@ -1,11 +1,18 @@
 #result {
   display: none;
   width: 100%;
-  height: 100%;
-  justify-content: center;
+  min-height: 100vh;
+  overflow-y: auto;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0rem;
+  padding: 2rem 0rem;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#result::-webkit-scrollbar {
+  display: none;
 }
 
 #result-container {
