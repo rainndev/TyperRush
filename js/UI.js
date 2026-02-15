@@ -58,7 +58,7 @@ export class UI {
   }
 
   displayCurrentLetter(letter) {
-    this.displayLetter.textContent = letter === " " ? "_" : letter;
+    this.displayLetter.textContent = letter === " " ? "␣" : letter;
   }
 
   renderText(text) {
