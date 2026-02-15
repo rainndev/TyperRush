@@ -49,6 +49,16 @@
 
   #caps-lock-toggle {
     padding: 0.7rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+  }
+
+  #letter-display {
+    width: 3rem;
+    height: 3rem;
+    font-size: var(--text-lg);
+    padding: 0.7rem;
     border-radius: 0.8rem;
   }
 

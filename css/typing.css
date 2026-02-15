@@ -37,6 +37,8 @@
 
 #caps-lock-toggle {
   display: flex;
+  height: 2rem;
+  width: 2rem;
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
@@ -46,7 +48,8 @@
   border: 1px solid var(--gray-color);
   transition:
     color ease-in-out 0.2s,
-    background-color ease-in-out 0.2s;
+    background-color ease-in-out 0.2s,
+    border-color ease-in-out 0.2s;
 }
 
 #caps-lock-toggle svg {
@@ -57,11 +60,47 @@
 }
 
 .caps-lock-on {
-  background-color: var(--gray-color) !important;
+  background-color: var(--dark-gray-color) !important;
   color: var(--yellow-color) !important;
 }
 
 .caps-lock-off {
   background-color: var(--black-color) !important;
   color: var(--gray-color) !important ;
+}
+
+#info-keyboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#letter-display {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-sm);
+  padding: 0.5rem;
+  font-weight: 700;
+  border-radius: 0.6rem;
+  color: var(--gray-color);
+  border: 1px solid var(--gray-color);
+  transition:
+    color ease-in-out 0.2s,
+    background-color ease-in-out 0.2s,
+    border-color ease-in-out 0.2s,
+    transform ease-in-out 0.1s;
+}
+
+#letter-display {
+  transition: transform 0.1s ease;
+}
+
+#letter-display.clicked {
+  background-color: var(--dark-gray-color);
+  color: var(--yellow-color);
+  transform: scale(0.95);
 }

@@ -11,6 +11,7 @@
   --gray-color: oklch(44.4% 0.011 73.639);
   --red-color: oklch(80.8% 0.114 19.571);
   --dark-yellow-color: oklch(87.81% 0.16869 91.863 / 0.25);
+  --dark-gray-color: oklch(44.4% 0.011 73.639 / 0.25);
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;

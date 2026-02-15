@@ -65,6 +65,8 @@ export class TypingTest {
       this.handleElapsedTime();
     }
 
+    this.ui.displayCurrentLetter(value[value.length - 1] || "");
+
     const textSpans = this.ui.textDisplay.querySelectorAll("span");
     const currentIndex = value.length - 1;
 
