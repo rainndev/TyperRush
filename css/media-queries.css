@@ -17,6 +17,10 @@
     font-size: var(--text-xl);
     line-height: 30px;
   }
+
+  #stats {
+    gap: 1rem;
+  }
 }
 
 /* md */
@@ -37,6 +41,10 @@
   #stats {
     gap: 2rem;
     grid-template-columns: auto auto;
+  }
+
+  #stats div h2 {
+    font-size: var(--text-3xl);
   }
 
   #caps-lock-toggle {
