@@ -38,6 +38,16 @@
     gap: 2rem;
     grid-template-columns: auto auto;
   }
+
+  #caps-lock-toggle {
+    padding: 0.7rem;
+    border-radius: 0.8rem;
+  }
+
+  #caps-lock-toggle svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 /* lg */
