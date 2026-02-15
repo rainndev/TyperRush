@@ -1,4 +1,4 @@
-import { TypingTest } from "./TypingTest.js";
+import { TypingTest } from "./js/TypingTest.js";
 
 new TypingTest();
 
