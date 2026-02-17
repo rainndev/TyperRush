@@ -65,32 +65,27 @@ export class TypingTest {
       this.handleElapsedTime();
     }
 
-    this.ui.displayCurrentLetter(value[value.length - 1] || "");
+    const textSpans = document
+      .getElementById("text-display")
+      .querySelectorAll("span");
 
-    const textSpans = this.ui.textDisplay.querySelectorAll("span");
-    const currentIndex = value.length - 1;
-
-    // Prevent out of bounds
-    if (currentIndex < 0 || currentIndex >= textSpans.length) {
-      return;
-    }
-
-    console.log("current index:", currentIndex, "value length:", value.length);
-
-    // Backspace case
     if (value.length < this.stats.totalTyped) {
       this.handleBackspace(value.length, textSpans);
       return;
     }
 
-    this.handleElapsedTime();
+    this.ui.displayCurrentLetter(value[value.length - 1] || "");
 
-    const typedChar = value[currentIndex];
+    const currentIndex = value.length - 1;
+
+    if (currentIndex < 0 || currentIndex >= textSpans.length) {
+      return;
+    }
+
     const actualChar = textSpans[currentIndex].innerText;
+    const typedChar = value[currentIndex];
 
-    console.log("Typed char:", typedChar, "Actual char:", actualChar);
-
-    if (typedChar === actualChar) {
+    if (actualChar === typedChar) {
       this.ui.updateCharacter(currentIndex, "correct");
       this.stats.correct++;
     } else {
