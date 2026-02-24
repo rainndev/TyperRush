@@ -33,12 +33,3 @@
   font-weight: 700;
   font-style: italic;
 }
-
-/* Press Start 2P */
-@font-face {
-  font-family: "Press Start 2P";
-  src: url("../assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
-    format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
