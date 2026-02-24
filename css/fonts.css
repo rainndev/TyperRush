@@ -1,0 +1,44 @@
+/* Courier Prime Regular */
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../assets/fonts/Courier_Prime/CourierPrime-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Courier Prime Bold */
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../assets/fonts/Courier_Prime/CourierPrime-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Courier Prime Italic */
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../assets/fonts/Courier_Prime/CourierPrime-Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Courier Prime Bold Italic */
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../assets/fonts/Courier_Prime/CourierPrime-BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Press Start 2P */
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("../assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
