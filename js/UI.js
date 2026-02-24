@@ -15,7 +15,7 @@ export class UI {
     this.displayLetter = document.getElementById("letter-display");
 
     //focus input when text display is clicked
-    this.restart = this.textDisplay.addEventListener("click", () => {
+    this.textDisplay.addEventListener("click", () => {
       this.input.focus();
     });
 

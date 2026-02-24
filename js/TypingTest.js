@@ -59,6 +59,8 @@ export class TypingTest {
   }
 
   handleInput(value) {
+    const currentIndex = value.length - 1;
+
     if (!this.isTestStarted) {
       this.isTestStarted = true;
       this.timer.start();
@@ -74,9 +76,7 @@ export class TypingTest {
       return;
     }
 
-    this.ui.displayCurrentLetter(value[value.length - 1] || "");
-
-    const currentIndex = value.length - 1;
+    this.ui.displayCurrentLetter(value[currentIndex] || "");
 
     if (currentIndex < 0 || currentIndex >= textSpans.length) {
       return;
@@ -98,7 +98,6 @@ export class TypingTest {
       this.finish();
     }
   }
-
   finish() {
     const timeInSeconds = this.timer.getElapsedTime();
     const generatedText = this.generatedText;
